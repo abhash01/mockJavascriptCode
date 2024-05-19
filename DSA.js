@@ -189,3 +189,41 @@ const resultS = searchAlgo(
   7
 );
 console.log(resultS);
+
+//Time Complexity binary 0(log(n))
+
+//#7 - DS & Algorithms Course | Check Square Elements of Another Array
+// arr1 = [1,2,3,4] , arr2 = [1,9,4,16] case1
+// arr1 = [1,2,4,2] , arr2 = [1,4,4,16] case2
+
+//condition
+//map1={1:1,2:2,4:1}
+//map2={1:1,4:2,16:1}
+
+function checkSquare(arr1, arr2) {
+  let map1 = {};
+  let map2 = {};
+
+  for (let item of arr1) {
+    map1[item] = (map1[item] || 0) + 1;
+  }
+  console.log(map1);
+  for (let item1 of arr2) {
+    map2[item1] = (map2[item1] || 0) + 1;
+  }
+  console.log(map2);
+  for (let key in map1) {
+    if (!map2[key * key]) {
+      // obj keys compare in term of square
+      return false;
+    }
+    if (map1[key] !== map2[key * key]) {
+      // value compare
+      return false;
+    }
+  }
+  return true;
+}
+
+const res = checkSquare([1, 2, 4, 2], [1, 4, 4, 16]);
+console.log(res);
