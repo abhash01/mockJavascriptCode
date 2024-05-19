@@ -150,3 +150,42 @@ function findlargest(array, num) {
 }
 const largest = findlargest([1, 2, 3, 4, 3, 5, 4, 6, 7, 8], 4);
 console.log(largest);
+
+//#6 - DS & Algorithms Course | Divide & Conquerer Technique | Binary Search
+// Divide and Conquerer Technique
+// Find the index of given no in a sorted array 7
+//[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+//min = 0   // 0  // element = 1
+//max = array.length - 1;  // 14  // element = 15
+//midIndex = (min + max) / 2;  (0 + 14 ) / 2 => 7(index) // element = 8
+// if array[midIndex] < number e.g(7)
+// min = midIndex + 1;
+// if array[midIndex] > number
+// max = midIndex - 1;    // max = 6 , min = 0, midImndex = 3  // {1,2,3,4,5,6,7}
+// min = 3 + 1 = 4, max = 6 ,  midImndex = 3  // {5,6,7}
+// (min + max ) / 2  => 5
+// min = midIndex + 1 = > min 6 ; max 6
+
+function searchAlgo(array, number) {
+  let min = 0;
+  let max = array.length - 1;
+  //midIndex = (min + max) / 2
+  while (min <= max) {
+    let midIndex = Math.floor((min + max) / 2);
+    if (array[midIndex] < number) {
+      min = midIndex + 1;
+    } else if (array[midIndex] > number) {
+      max = midIndex - 1;
+    } else {
+      return midIndex;
+    }
+  }
+  return -1;
+}
+
+const resultS = searchAlgo(
+  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+  7
+);
+console.log(resultS);
