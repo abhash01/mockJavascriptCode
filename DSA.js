@@ -227,3 +227,56 @@ function checkSquare(arr1, arr2) {
 
 const res = checkSquare([1, 2, 4, 2], [1, 4, 4, 16]);
 console.log(res);
+
+// #9 - DS & Algorithms Course | Recursive function in Simplest way
+// Recursive: when function call itself
+// otherwise it will get called for infinite time
+// If a function call itself then there must be an end point
+
+let counter = 0;
+function demo(number) {
+  if (counter > number) {
+    return;
+  }
+  console.log("counter", counter);
+  counter++;
+  demo(number);
+}
+demo(10);
+
+// #10 - DS & Algorithms Course | Advance Recursive function | Sorting |
+// Sorting using Recursive Function
+// [2,3,1,4] => By Default case
+// [2,1,3,4] => case 1
+// [1,2,3,4] => final output
+
+let myArray = [2, 3, 1, 4];
+let newArrayList = [];
+let i = 0;
+let j = 1;
+function isSorted(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > array[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+function sorted(array) {
+  if (isSorted(array)) {
+    newArrayList = array;
+    return;
+  } else if (array[i] < array[j]) {
+    i++;
+    j++;
+    sorted(array);
+  } else {
+    [array[i], array[j]] = [array[j], array[i]];
+    i = 0;
+    j = 1;
+    sorted(array);
+  }
+}
+
+sorted(myArray);
+console.log(newArrayList);
