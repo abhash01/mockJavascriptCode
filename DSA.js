@@ -280,3 +280,63 @@ function sorted(array) {
 
 sorted(myArray);
 console.log(newArrayList);
+
+// #12 - DS & Algorithms Course | Helper Recursive function
+
+// SLICE METHOD
+// let result = [1,2,3,4,5,6,7,8,10]
+// console.log(result.slice(1))    => [2, 3, 4, 5, 6, 7, 8, 10]
+// console.log(result.slice(2))    => [ 3, 4, 5, 6, 7, 8, 10]
+// console.log(result.slice(3))    => [ 4, 5, 6, 7, 8, 10]
+
+// Helper Recursive function
+// [1,2,3,4,5,6,7,8,9,10]
+// [1,3,5,7,9] => output
+// number % 2 !== 0 => odd
+
+function findOdd(array) {
+  let output = [];
+  function helperRecursive(array) {
+    if (array.length === 0) {
+      return;
+    }
+    if (array[0] % 2 !== 0) {
+      output.push(array[0]);
+    }
+    helperRecursive(array.slice(1)); // recursivly call
+  }
+  helperRecursive(array); // 1st time call
+  return output;
+}
+const result3 = findOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+console.log(result3);
+
+// #13 - DS & Algorithms Course | Introduction to Search Algorithms
+// Searching
+// let names = ["abhash","aman","dee","smriti"];
+// console.log(names.indexOf("abhash"))    => 0
+// console.log(names.indexOf("aman"))    => 1
+// console.log(names.indexOf("Raj"))    =>  -1
+
+// console.log(names.includes("abhash"));  => true
+// console.log(names.includes("raj"));  => false
+
+// #14 - DS & Algorithms Course | linear search Algorithm
+// Linear Search Alogorithm
+
+const user = [
+  { username: "abhash", email: "abhash@gmail.com" },
+  { username: "rahul", email: "rahul@gmail.com" },
+  { username: "raj", email: "raj@gmail.com" },
+];
+
+function findUser(user, val) {
+  for (let item of user) {
+    if (item["username"] === val) {
+      return true;
+    }
+  }
+  return false;
+}
+const findsearch = findUser(user, "raj");
+console.log(findsearch);
