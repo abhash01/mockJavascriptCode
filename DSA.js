@@ -340,3 +340,98 @@ function findUser(user, val) {
 }
 const findsearch = findUser(user, "raj");
 console.log(findsearch);
+
+// #15 - DS & Algorithms Course | Sorting algorithms | Bubble Sort Implementation 🔥
+// Bubble Sort (Sorting..)
+// A sorting Algorithum where the largest values bubble up at the top
+
+function bubbleSort(array) {
+  for (let i = array.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+      }
+    }
+  }
+  return array;
+}
+
+const resultBubblesort = bubbleSort([5, 3, 4, 1, 2, 8, 6, 7]);
+console.log(resultBubblesort);
+
+// [5,3,4,1,2,8,6,7]
+// [3,5,4,1,2,8,6,7]
+// [3,4,5,1,2,8,6,7]
+// [3,4,1,5,2,8,6,7]
+// [3,4,1,2,5,8,6,7]
+// [3,4,1,2,5,6,8,7]
+// [3,4,1,2,5,6,7,8]
+// next time it will run for 7 time as 8 is largest and move up
+
+// #19 - Find the Maximum Occurring Character in String ? DS & Algorithms Course 🔥
+// Find the maximum occuring character in given string ?
+// Hello World
+
+function maxOccurChar(str) {
+  let charObj = {};
+  for (let k of str) {
+    charObj[k] = (charObj[k] || 0) + 1;
+    //console.log(charObj);
+  }
+  let max = 1;
+  let char = str[0];
+  for (let key in charObj) {
+    if (charObj[key] > max) {
+      max = charObj[key];
+      char = key;
+    }
+  }
+  return char;
+}
+
+const resultOcc = maxOccurChar("Hello World");
+console.log(resultOcc);
+
+// onther way
+
+function getCharString(str) {
+  const map = {};
+  str.split("").forEach((element) => {
+    map[element] = map[element] ? map[element] + 1 : 1;
+  });
+  let max = 1;
+  char = str[0];
+  for (let k in map) {
+    if (map[k] > max) {
+      max = map[k];
+      char = k;
+    }
+  }
+  return char;
+}
+
+const result33 = getCharString("Hello World");
+console.log(result33);
+
+// #20 - Check if Given String is Palindrome or not ? DS & Algorithms Course 🔥
+
+// 1st way
+function isPal(str) {
+  let reverse = str.split("").reverse().join("");
+  return str.toLowerCase() === reverse.toLowerCase();
+}
+
+console.log(isPal("noon"));
+
+function isPal2(str) {
+  let reverse = str.toLowerCase();
+  let left = 0;
+  let right = str.length - 1;
+  while (left < right) {
+    if (str[left] !== str[right]) return false;
+    left++;
+    right--;
+  }
+  return true;
+}
+console.log(isPal2("noon"));
