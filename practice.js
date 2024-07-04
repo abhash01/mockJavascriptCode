@@ -31,6 +31,7 @@ const user = [
   },
 ];
 
+// -- Check if the user with such name Exits -- //
 function isUserExist(name, user) {
   let exits = false;
   for (let i = 0; i < user.length; i++) {
@@ -61,7 +62,28 @@ console.log(isNameExt("test2", user));
 
 // pbl 4 solution
 const isNameExitSome = (name, users) => {
-  const user = users.some((user) => user.name === name);
+  const user = users.some((user) => user.name === name); // some method retun boolean value
   return user;
 };
 console.log(isNameExitSome("test4", user));
+
+// -- Adding Element to the Array -- //
+
+let arr = [1, 2];
+
+const append = (arr, ele) => {
+  //push method returns the new length of the array.
+  // it modified the array
+  arr.push(ele);
+  return arr;
+};
+console.log(append(arr, 4)); // [1, 2, 4]
+console.log(arr); // [1, 2, 4]
+
+const newarray = (arr, ele) => {
+  return [...arr, ele];
+};
+console.log(newarray(arr, 5)); // [1, 2, 5]
+console.log(arr); // [1, 2]
+
+// -- Remove the duplicate Element in the Array -- //
