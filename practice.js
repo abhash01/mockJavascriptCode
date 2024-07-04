@@ -87,3 +87,56 @@ console.log(newarray(arr, 5)); // [1, 2, 5]
 console.log(arr); // [1, 2]
 
 // -- Remove the duplicate Element in the Array -- //
+
+// The Set is a built-in JavaScript data structure that allow yo to store unique values of any
+// The Spread operator is used to expand the array into individual argument;
+// the includes method is used to check if it already exits in the uniqueElement array.
+// In JavaScript, the includes() method is used to determine whether an array or string contains a certain element or substring, returning true or false accordingly.
+// let fruits = ['apple', 'banana', 'mango'];
+// let hasBanana = fruits.includes('banana'); // returns true
+
+// let sentence = 'The quick brown fox jumps over the lazy dog';
+// let hasFox = sentence.includes('fox'); // returns true
+
+//pblm 1 solution;
+const arra = [1, 1, 2, 3, 8, 9, 3, 4, 4, 5, 9, 6, 7, 7, 7, 7, 8];
+const uniqueArr = (arr) => {
+  let count = [];
+  arr.filter((ele) => {
+    if (!count.includes(ele)) {
+      count.push(ele);
+    }
+  });
+  return count;
+};
+
+console.log(uniqueArr(arra));
+
+const arrU = [1, 1, 2, 3, 8, 9, 3, 4, 4, 5, 9, 6, 7, 7, 7, 7, 8];
+const uniqueArrSet = (arr) => {
+  return [...new Set(arr)];
+};
+
+console.log(uniqueArrSet(arrU));
+
+//level 3
+const arrReduce = [1, 1, 2, 3, 8, 9, 3, 4, 4, 5, 9, 6, 7, 7, 7, 7, 8];
+const uniqueArrRed = (arr) => {
+  return arr.reduce((acc, ele) => {
+    return acc.includes(ele) ? acc : [...acc, ele];
+  }, []);
+};
+
+console.log(uniqueArrRed(arrReduce));
+
+// -- Concatenating the Array  -- //
+
+const arr1 = [1, 1, 2, 3];
+const arr2 = [4, 5, 7, 8, 9];
+const addarr = (arr1, arr2) => {
+  return [...arr1, ...arr2];
+  //return arr1.concat(...arr2)
+  // arr1.push(...arr2)
+};
+// spread operation dont modified the original array;
+console.log(addarr(arr1, arr2));
