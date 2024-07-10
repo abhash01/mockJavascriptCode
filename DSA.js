@@ -435,3 +435,25 @@ function isPal2(str) {
   return true;
 }
 console.log(isPal2("noon"));
+
+//insertion sort
+// phale hum 1st index se start karge aur compare kare ge wah phiche wale se chpta toh nhi
+// agare chota hai toh swap kare ge
+// current value ko baad mai replcae kare ge
+
+const sorted = (arr) => {
+  for (let i = 1; i < arr.length; i++) {
+    let curr = arr[i]; // 8
+    let j = i - 1; // [0] // 6
+    while (j >= 0 && arr[j] > curr) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = curr;
+  }
+  return arr;
+};
+
+console.log(sorted([6, 8, 2, 12, 9, 15, 4]));
+// 1st iterartion [6, 8, 2, 12, 9, 15, 4]
+// 2nd iteration [6, 2, 8, 12, 9, 15, 4]

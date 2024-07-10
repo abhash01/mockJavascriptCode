@@ -180,3 +180,4 @@
 // console.log(isPrime(8)); // 8. write a function to find the number is prime or not
 // console.log(factorial(5)); // 9. write a function to calculate the factorial of a number // factorial(5) = 1*2*3*4*5 = 120
 // console.log(removeWhiteSpace("happy abhash ypu completerd "));
+// console.log(firstOdd(input,n));// missing the ODD number // const input =[5,7,9,11,15,17] //output = 13
