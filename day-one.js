@@ -162,3 +162,22 @@ const missOdd = (arr) => {
   }
 };
 console.log(missOdd([5, 7, 9, 11, 15, 17]));
+
+// today plan
+//Q1. sum of all naturalk numbers from 1 to n
+// sum of 1 to 5 :15
+//Q2 Sum of digits of a number
+// 1287 = > 1+2+8+7 = 18
+// remainder 7 ,  Quentiontent 128
+// % remainder / quopient
+// Q3 palindrone
+//number(121) true
+//number(-121) false
+
+// 4 268. Missing Number
+// NOTE : add all number in array
+//Given an array nums containing n distinct numbers in the range [0, n],
+//return the only number in the range that is missing from the array.
+//Input: nums = [3,0,1] => Output: 2
+//Input: nums = [0,1]  => Output: 2
+//Input: nums = [9,6,4,2,3,5,7,0,1] => Output: 8
