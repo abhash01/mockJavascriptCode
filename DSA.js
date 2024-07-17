@@ -457,3 +457,37 @@ const sorted = (arr) => {
 console.log(sorted([6, 8, 2, 12, 9, 15, 4]));
 // 1st iterartion [6, 8, 2, 12, 9, 15, 4]
 // 2nd iteration [6, 2, 8, 12, 9, 15, 4]
+
+// Flatten the arr with recussion
+
+var arr = [1, [2, 3, 4], [5, 6, 7, [8, 9]]];
+
+//const newArr = arr.flat(Infinity)
+//console.log(newArr);
+const flattedArr = (arr) => {
+  const someArr = arr.reduce((acc, item) => {
+    if (Array.isArray(item)) {
+      acc = acc.concat(flattedArr(item));
+    } else {
+      acc.push(item);
+    }
+    return acc;
+  }, []);
+  return someArr;
+};
+
+console.log(flattedArr(arr));
+// Another way
+const flatted = (arr, flattedend) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flatted(arr[i], flattedend); //here we calling flatted again as recursive
+    } else {
+      flattedend.push(arr[i]);
+    }
+  }
+  return flattedend;
+};
+
+console.log(flatted(arr, [])); // NOTE
+/// we are passing arr and empty arr
