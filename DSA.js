@@ -491,3 +491,35 @@ const flatted = (arr, flattedend) => {
 
 console.log(flatted(arr, [])); // NOTE
 /// we are passing arr and empty arr
+
+// Important for recusiion
+
+let arr = [2, 3, 1, 4, 6, 9, 8, 5, 45, 3];
+let newarr = [];
+let i = 0;
+let j = 1;
+function isSorted(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+function sortedArr(arr) {
+  if (isSorted(arr)) {
+    newarr = arr;
+    return;
+  } else if (arr[i] < arr[j]) {
+    i++;
+    j++;
+    sortedArr(arr);
+  } else {
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    i = 0;
+    j = 1;
+    sortedArr(arr);
+  }
+}
+sortedArr(arr);
+console.log(newarr);
