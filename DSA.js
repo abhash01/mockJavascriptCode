@@ -523,3 +523,53 @@ function sortedArr(arr) {
 }
 sortedArr(arr);
 console.log(newarr);
+
+let str = "nurses run"; // should return true
+// kyunki space remove kar de toh wah palindrone hoga
+function isPalimdrome(str) {
+  str = str.replace(" ", "");
+  //console.log(str)
+  let reverseStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reverseStr = reverseStr + str[i];
+  }
+  //console.log(reverseStr)
+  return reverseStr;
+}
+console.log(str);
+
+//const res = isPalimdrome(str);
+
+const resultPalim = str === isPalimdrome(str) ? true : false;
+console.log(resultPalim);
+
+// Sum fo all element in the number
+let num = 34556456464;
+
+function sum(num) {
+  let sum = 0;
+  while (num > 0) {
+    let rem = num % 10;
+    sum = sum + rem;
+    num = Math.floor(num / 10);
+  }
+  return sum;
+}
+
+const resSum = sum(num);
+console.log(resSum);
+
+//Prime Number
+
+function isPrime(num) {
+  if (num < 2) {
+    return `${num} is not a prime`;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return `${num} is not a prime`;
+    }
+  }
+  return `${num} is a prime`;
+}
+console.log(isPrime(117));
