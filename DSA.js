@@ -573,3 +573,48 @@ function isPrime(num) {
   return `${num} is a prime`;
 }
 console.log(isPrime(117));
+
+//A factorial number is the product of all positive integers, which are equal to or less than the given number.
+// 4! = 4 × 3 × 2 × 1 = 24
+// 7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040
+// 1! = 1
+function factorial(num) {
+  if (num === 0 || num === 1) {
+    return 1;
+  } else {
+    return num * factorial(num - 1);
+  }
+}
+console.log(factorial(7));
+
+// Write a JavaScript program to convert a string to title case (capitalize the first letter of each word).
+let str = "i love javascript";
+function upperstr(str) {
+  let newstr = str.split(" ");
+  for (let i = 0; i < newstr.length; i++) {
+    newstr[i] = newstr[i][0].toUpperCase() + newstr[i].substring(1);
+  }
+  return newstr.join(" ");
+}
+const resUpperCase = upperstr(str);
+console.log(resUpperCase); // "I Love Javascript"
+
+//  Debouncing is a performance optimization technique to reduce the rate at which events trigger functions
+
+<input type="text" placeholder="search" onkeyup="Betterfn()" />;
+
+let countar = 0;
+function getDate() {
+  console.log("fetch data" + countar++);
+}
+function myDebounce(call, d) {
+  // yaha pr hum getData aur 1000 delay de rahe hai
+  let timer;
+  return function (...args) {
+    if (timer) clearTimeout(timer);
+    setTimeout(() => {
+      call();
+    }, d);
+  };
+}
+const Betterfn = myDebounce(getData, 1000);
