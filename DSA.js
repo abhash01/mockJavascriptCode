@@ -618,3 +618,78 @@ function myDebounce(call, d) {
   };
 }
 const Betterfn = myDebounce(getData, 1000);
+
+// map, filter and reduce
+// Polyfill for map()
+// Array.map((num,i,arr) => { })
+
+let arr1 = [1, 3, 5, 7, 8];
+
+Array.prototype.myMap = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i], i, this));
+  }
+  return temp;
+};
+
+const multi = arr1.myMap((num) => {
+  return (num = num * 2);
+});
+
+console.log(multi);
+
+//  Array.filter
+let arr2 = [1, 3, 5, 7, 8];
+
+Array.prototype.myFilter = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) temp.push(this[i]);
+  }
+  return temp;
+};
+
+const moreThanFive = arr2.myFilter((num) => {
+  return num > 5;
+});
+
+console.log(moreThanFive);
+
+// Polyfill for map()
+// Array.reduce((acc,num,i,arr) => { },initialValue)
+
+let arr3 = [1, 3, 5, 7, 8];
+
+Array.prototype.myReduce = function (cb, initialValue) {
+  var accumulator = initialValue;
+
+  for (let i = 0; i < this.length; i++) {
+    accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+  }
+
+  return accumulator;
+};
+
+const sumofAll = arr3.myReduce((acc, curr, i, arr) => {
+  return acc + curr;
+}, 0);
+
+console.log(sumofAll);
+
+let arrdata = [
+  { name: "abhash", rollnumber: 31, marks: 80 },
+  { name: "raj", rollnumber: 32, marks: 60 },
+  { name: "rahul", rollnumber: 33, marks: 70 },
+  { name: "neha", rollnumber: 34, marks: 30 },
+];
+
+const detail = arrdata.filter((stu) => {
+  return stu.marks > 60;
+});
+console.log(detail);
+
+const sumofAllMarks = arrdata.reduce((acc, curr) => {
+  return (acc = acc + curr.marks);
+}, 0);
+console.log(sumofAllMarks);
