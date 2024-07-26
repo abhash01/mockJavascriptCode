@@ -14,7 +14,6 @@ function vowelCount(str) {
   return count;
 }
 console.log(vowelCount(str));
-//if(vowel.indexOf(str[i]))
 
 // 2. #1 - DS & Algorithms Course | Sum Zero Problem
 // Checking Sum ZERO
@@ -74,7 +73,6 @@ function isAnagram(str1, str2) {
   let counter = {};
   for (let word of str1) {
     counter[word] = (counter[word] || 0) + 1;
-    //console.log(counter)
   }
   //console.log(counter) {e: 1,h: 1,l: 2,o: 1} // str2 mai check kar ke counter se minus kar rahe hai
   for (let item of str2) {
@@ -693,3 +691,86 @@ const sumofAllMarks = arrdata.reduce((acc, curr) => {
   return (acc = acc + curr.marks);
 }, 0);
 console.log(sumofAllMarks);
+
+//Input: An integer n.
+//   Output: If n is 100, return 100. Otherwise, return n+1 . n + 1... .100
+
+function processNumber(n) {
+  if (n === 100) {
+    return 100;
+  } else {
+    let result = [];
+    for (let i = n + 1; i <= 100; i++) {
+      result.push(i);
+    }
+    return result;
+  }
+}
+
+// Example usage:
+console.log(processNumber(98)); // Output: [99, 100]
+console.log(processNumber(100)); // Output: 100
+
+//Input: s = "abcabcbb"
+//Output: 3
+
+function lengthOfLongestSubstring(str) {
+  if (!str) return 0;
+  let start = 0;
+  let end = 0;
+  let maxlength = 0;
+  const uniquechar = new Set();
+  while (end < str.length) {
+    if (!uniquechar.has(str[end])) {
+      uniquechar.add(str[end]);
+      end++;
+      maxlength = Math.max(maxlength, uniquechar.size);
+      //console.log(Math.max(1, 3, 2));
+      // Expected output: 3
+
+      //console.log(Math.max(-1, -3, -2));
+      // Expected output: -1
+    } else {
+      uniquechar.delete(str[start]);
+      start++;
+    }
+  }
+  return maxlength;
+}
+const resultSubstring = lengthOfLongestSubstring("pwwkew");
+console.log(resultSubstring);
+
+//working
+//Final String -> abcabcbb length => 7
+// start = 0
+// end = 0
+
+// abcabcbb
+// start = 0
+// end = 2
+// max = 3
+
+// bcabcbb // a removed from first
+// start = 1
+// end = 3
+// max = 3
+
+// cabcbb // b removed from first
+// start = 2
+// end = 4
+// max = 3
+
+// abcbb // c removed from first
+// start = 3
+// end = 5
+// max = 3
+
+// abcb // b removed from str[4] as start 4
+// start = 4
+// end = 6
+// max = 3
+
+// abc // b removed from str[4] as start 4
+// start = 5
+// end = 7
+// max = 3
