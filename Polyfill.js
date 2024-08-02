@@ -29,7 +29,7 @@ Array.prototype.MyMapmethod = function (callback) {
   return newarr;
 };
 
-const multi = arr1.myMap((num) => {
+const multi = arr1.MyMapmethod((num) => {
   return (num = num * 2);
 });
 

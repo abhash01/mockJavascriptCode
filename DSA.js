@@ -716,3 +716,55 @@ console.log(resultSubstring);
 // start = 5
 // end = 7
 // max = 3
+
+//14. Longest Common Prefix
+
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+
+// Input: strs = ["dog","racecar","car"]
+// Output: ""
+
+var longestCommonPrefix = function (strs) {
+  let prefix = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(prefix) !== 0) {
+      prefix = prefix.substring(0, prefix.length - 1);
+    }
+  }
+  return prefix;
+};
+
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+
+// let arr1 = "flow";
+// let arr0 = "flowe";
+// let outputof = arr1.indexOf(arr0); => -1
+
+// let arr2 = "flow";
+// let arr3 = "flow";
+// let outputof = arr2.indexOf(arr3); => 0
+
+//Write a function that prints the numbers from 1 to 100. But for multiples of three,
+//print "Fizz" instead of the number and for the multiples of five, print "Buzz".
+//For numbers which are multiples of both three and five, print "FizzBuzz".
+// Input: n = 3
+// Output: ["1","2","Fizz"]
+function fizzBuzz(n) {
+  let printout = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) {
+      printout.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      printout.push("Fizz");
+    } else if (i % 5 === 0) {
+      printout.push("Buzz");
+    } else {
+      printout.push(i);
+    }
+  }
+  return printout;
+}
+
+const fizz = fizzBuzz(15);
+console.log(fizz);
