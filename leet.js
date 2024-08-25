@@ -291,3 +291,27 @@ var findDisappearedNumbers = function (nums) {
 };
 const misnum = findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]);
 console.log(misnum);
+
+// 20. Valid Parentheses
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+// Every close bracket has a corresponding open bracket of the same type.
+
+// Input: s = "()" Output: true
+// Input: s = "()[]{}" Output: true
+// Input: s = "(]" Output: false
+// Input: s = "([])"Output: true
+var isValid = function (s) {
+  if (s.length === 0) return null;
+  let stack = [];
+  for (let c of s) {
+    if (c === "(") stack.push(")");
+    else if (c === "[") stack.push("]");
+    else if (c === "{") stack.push("}");
+    else if (c !== stack.pop()) return false;
+  }
+  return stack.length == 0; // yaha pr agar stack mai kuch nhi toh true nhi toh false
+};
