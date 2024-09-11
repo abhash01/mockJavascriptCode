@@ -1,12 +1,12 @@
 // 1.
-// function fruit() {
-//   console.log(name);
-//   console.log(price);
+function fruit() {
+  console.log(name);
+  console.log(price);
 
-//   var name = "apple";
-//   let price = 20;
-// }
-// fruit();
+  var name = "apple";
+  let price = 20;
+}
+fruit();
 
 // ANS :
 // undefined
@@ -15,17 +15,17 @@
 //     at codestepBystep.js:8:1
 
 // 2.
-// for (var i = 0; i < 3; i++) {
-//   setTimeout(() => console.log(i), 5000);
-// }
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 5000);
+}
 
 //ANS
 // 3 because var is global scope , loop completed before setTimeout
 
 // 3.
-// for (let i = 0; i < 3; i++) {
-//   setTimeout(() => console.log(i), i * 1000);
-// }
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), i * 1000);
+}
 
 //ANS
 // 0
@@ -33,70 +33,66 @@
 // 2
 
 // 4.
-// console.warn(+true);         //=> 1 becoz adding symbole convert to no
-// console.warn(+"true");       //=> NaN convert to no but string is NaN
-// console.warn(-true);         //=> -1 becoz adding symbole convert to no
-// console.warn(typeof -true);  //=> number symbol convert to number
-// console.warn(typeof +true);  //=> number symbol convert to number
+console.warn(+true); //=> 1 becoz adding symbole convert to no
+console.warn(+"true"); //=> NaN convert to no but string is NaN
+console.warn(-true); //=> -1 becoz adding symbole convert to no
+console.warn(typeof -true); //=> number symbol convert to number
+console.warn(typeof +true); //=> number symbol convert to number
 
 // 5.
-// console.warn(!"abhash");         //=> false
-// console.warn(!!"abhash");        //=> true
-// console.warn(typeof "abhash");   //=> string
+console.warn(!"abhash"); //=> false
+console.warn(!!"abhash"); //=> true
+console.warn(typeof "abhash"); //=> string
 
 // 6.
-// let data = "size";
-// const bird = {
-//   size: "small",
-// };
-// console.warn(bird[data]);   //=> small
-// console.warn(bird["size"]); //=> small
-// console.warn(bird.size);    //=> small
-// console.warn(bird.data);    //=> undefined
+let data = "size";
+const bird = {
+  size: "small",
+};
+console.warn(bird[data]); //=> small
+console.warn(bird["size"]); //=> small
+console.warn(bird.size); //=> small
+console.warn(bird.data); //=> undefined
 
 // 7.
-// let c = { name: "abhash" };
-// let d;
+let c = { name: "abhash" };
+let d;
 
-// d = c;
-// c.name = "rahul";
-// console.log(d.name);
+d = c;
+c.name = "rahul";
+console.log(d.name);
 
 //ANS
 // rahul , bcoz in case of object when you copied object it using the same reference i.e same memory location.
 
 // 8.
-// var x;
-// var x =10;
-// console.log(x)
+var x;
+var x = 10;
+console.log(x);
 
 //ANS
 //10
 
 // 9.
-// var x;
-// let x = 10;
-// console.log(x);
+var x;
+let x = 10;
+console.log(x);
 
 //ANS
 // Uncaught SyntaxError: Identifier 'x' has already been declared
 
 // 11.
-// let a = 3;
-// let b = new Number(3); // with new keyword it will give you new object and typeof b is object
+let a = 3;
+let b = new Number(3); // with new keyword it will give you new object and typeof b is object
 
-// console.log(a == b);
-// console.log(a === b);
-
-//ANS
-// true
-// false
+console.log(a == b); // true
+console.log(a === b); // false
 
 // 12.
-// function sum(a, b) {
-//   return a + b;
-// }
-// console.log(sum(1, "2"));
+function sum(a, b) {
+  return a + b;
+}
+console.log(sum(1, "2"));
 
 //ANS
 // 12
