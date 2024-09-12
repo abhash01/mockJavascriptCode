@@ -55,17 +55,35 @@ var removeElement = function (nums, val) {
 // You must write an algorithm with O(log n) runtime complexity.
 
 // Example 1:
-
 // Input: nums = [1,3,5,6], target = 5
 // Output: 2
-// Example 2:
 
+// Example 2:
 // Input: nums = [1,3,5,6], target = 2
 // Output: 1
-// Example 3:
 
+// Example 3:
 // Input: nums = [1,3,5,6], target = 7
 // Output: 4
+
+function insert(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  let mid;
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+  return left;
+}
+const res = insert([1, 3, 5, 6], 7);
+console.log(res);
 
 // ----------  Leet Question -------------//
 
