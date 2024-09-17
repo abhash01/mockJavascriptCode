@@ -397,8 +397,7 @@ var majorityElement = function (nums) {
 //     return key
 // };
 
-
-189. Rotate Array
+//189. Rotate Array
 // Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
 // Example 1:
@@ -411,22 +410,22 @@ var majorityElement = function (nums) {
 
 // Example 2:
 // Input: nums = [-1,-100,3,99], k = 2  Output: [3,99,-1,-100]
-// Explanation: 
+// Explanation:
 // rotate 1 steps to the right: [99,-1,-100,3]
 // rotate 2 steps to the right: [3,99,-1,-100]
 
-function reverseArr(left,right,nums){
-  while(left < right){
-    [nums[left],nums[right]] = [nums[right],nums[left]];
+function reverseArr(left, right, nums) {
+  while (left < right) {
+    [nums[left], nums[right]] = [nums[right], nums[left]];
     left++;
-    right--
+    right--;
   }
 }
 
-var rotate = function(nums,k){
+var rotate = function (nums, k) {
   k = k % nums.length;
   nums.reverse();
-  reverseArr(0,k-1,nums);
-  reverseArr(k,nums.length-1,nums)
-  return nums
-}
+  reverseArr(0, k - 1, nums);
+  reverseArr(k, nums.length - 1, nums);
+  return nums;
+};
