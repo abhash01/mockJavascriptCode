@@ -464,3 +464,132 @@ console.log(profitget);
 //   }
 //   return max
 // };
+
+// 122. Best Time to Buy and Sell Stock II
+// You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
+// On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time.
+//  However, you can buy it then immediately sell it on the same day.
+// Find and return the maximum profit you can achieve.
+
+// Example 1:
+// Input: prices = [7,1,5,3,6,4] Output: 7
+// Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+// Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+// Total profit is 4 + 3 = 7.
+
+// Example 2:
+// Input: prices = [1,2,3,4,5] Output: 4
+// Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+// Total profit is 4.
+
+// Example 3:
+// Input: prices = [7,6,4,3,1] Output: 0
+// Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
+
+function maxProfit(prices) {
+  let profit = 0;
+  for (let i = 1; i < prices.length; i++) {
+    let currPrice = prices[i];
+    let prevPrice = prices[i - 1];
+    if (currPrice > prevPrice) {
+      profit = profit + currPrice - prevPrice;
+    }
+  }
+  return profit;
+}
+
+const profitgetadd = maxProfit([7, 1, 5, 3, 6, 4]);
+console.log(profitgetadd);
+
+// 28. Find the Index of the First Occurrence in a String
+// Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+// Example 1:
+// Input: haystack = "sadbutsad", needle = "sad" Output: 0
+// Explanation: "sad" occurs at index 0 and 6.
+// The first occurrence is at index 0, so we return 0.
+
+// Example 2:
+// Input: haystack = "leetcode", needle = "leeto" Output: -1
+// Explanation: "leeto" did not occur in "leetcode", so we return -1.
+/**
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ sadutsad
+ i
+ k
+
+ sad
+ k
+
+while(needle[j] === haystack[k]){
+    j++;
+    k++;
+    if(j === needle.length) return i;
+    if(k === haystack.length) return -1;
+}
+if(needle[j] !== haystack[k]){
+    i++;
+    k=i;
+    j=0;
+}
+ nnedle.length > haystack.length => -1
+ */
+var strStr = function (haystack, needle) {
+  let i = 0,
+    j = 0,
+    k = 0;
+  while (i < haystack.length) {
+    while (needle[j] === haystack[k]) {
+      j++;
+      k++;
+      if (j === needle.length) return i;
+      if (k === haystack.length) return -1;
+    }
+    if (needle[j] !== haystack[k]) {
+      i++;
+      k = i;
+      j = 0;
+    }
+  }
+  return -1;
+};
+
+// 58. Length of Last Word
+// Given a string s consisting of words and spaces, return the length of the last word in the string.
+// A word is a maximal
+// substring
+// consisting of non-space characters only.
+
+// Example 1:
+// Input: s = "Hello World" Output: 5
+// Explanation: The last word is "World" with length 5.
+
+// Example 2:
+// Input: s = "   fly me   to   the moon  " Output: 4
+// Explanation: The last word is "moon" with length 4.
+
+function lengthOfLastWord(s) {
+  let lastWordlength = 0;
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] !== " ") {
+      for (let j = i; j >= 0; j--) {
+        if (s[j] !== " ") {
+          lastWordlength++;
+        } else {
+          return lastWordlength;
+        }
+      }
+      return lastWordlength;
+    }
+  }
+}
+
+const lengword = lengthOfLastWord("Hello World");
+console.log(lengword);
+
+// var lengthOfLastWord = function(s) {
+//     const lastword = s.trim().split(" ")
+//     return (lastword[lastword.length-1].length)
+// };
