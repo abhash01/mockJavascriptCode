@@ -24,6 +24,8 @@ var removeDuplicates = function (nums) {
   return index;
 };
 
+// ----------  Leet Question -------------//
+
 // 27. Remove Element
 // Example 1:
 
@@ -47,6 +49,8 @@ var removeElement = function (nums, val) {
   }
   return index;
 };
+
+// ----------  Leet Question -------------//
 
 // 35. Search Insert Position
 // Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
@@ -138,6 +142,8 @@ function fizzBuzz(n) {
 const fizz = fizzBuzz(15);
 console.log(fizz);
 
+// ----------  Leet Question -------------//
+
 // 6. Merge Two Sorted Arrays
 // Write a function mergeSortedArrays that merges two sorted arrays into a single sorted array.
 
@@ -170,6 +176,8 @@ function mergeSortedArrays(arr1, arr2) {
 
 console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6, 7, 8])); // [1, 2, 3, 4, 5, 6]
 
+// ----------  Leet Question -------------//
+
 //350. Intersection of Two Arrays II
 // Given two integer arrays nums1 and nums2, return an array of their intersection.
 // Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
@@ -198,6 +206,8 @@ var intersect = function (nums1, nums2) {
   }
   return result;
 };
+
+// ----------  Leet Question -------------//
 
 //128. Longest Consecutive Sequence
 // Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
@@ -228,6 +238,8 @@ var longestConsecutive = function (nums) {
   return max;
 };
 
+// ----------  Leet Question -------------//
+
 // 66. Plus One
 // You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 
@@ -253,6 +265,8 @@ function output(digits) {
 }
 const plusone = output([9, 9, 9, 9, 9]);
 console.log(plusone);
+
+// ----------  Leet Question -------------//
 
 // 392. Is Subsequence
 // Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
@@ -285,6 +299,8 @@ function subsequence(s, t) {
 const sub = subsequence("axc", "ahbgdc");
 console.log(sub);
 
+// ----------  Leet Question -------------//
+
 // 448. Find All Numbers Disappeared in an Array
 // Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
 
@@ -309,6 +325,8 @@ var findDisappearedNumbers = function (nums) {
 const misnum = findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]);
 console.log(misnum);
 
+// ----------  Leet Question -------------//
+
 // 20. Valid Parentheses
 // Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
@@ -332,6 +350,8 @@ var isValid = function (s) {
   }
   return stack.length == 0; // yaha pr agar stack mai kuch nhi toh true nhi toh false
 };
+
+// ----------  Leet Question -------------//
 
 // 704. Binary Search
 // Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
@@ -362,6 +382,8 @@ var search = function (nums, target) {
   }
   return -1;
 };
+
+// ----------  Leet Question -------------//
 
 //169. Majority Element
 //Given an array nums of size n, return the majority element.
@@ -396,6 +418,8 @@ var majorityElement = function (nums) {
 //     return key
 // };
 
+// ----------  Leet Question -------------//
+
 //189. Rotate Array
 // Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
@@ -428,6 +452,8 @@ var rotate = function (nums, k) {
   reverseArr(k, nums.length - 1, nums);
   return nums;
 };
+
+// ----------  Leet Question -------------//
 
 //121. Best Time to Buy and Sell Stock
 // Input: prices = [7,1,5,3,6,4] Output: 5
@@ -465,6 +491,8 @@ console.log(profitget);
 //   return max
 // };
 
+// ----------  Leet Question -------------//
+
 // 122. Best Time to Buy and Sell Stock II
 // You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 // On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time.
@@ -500,6 +528,8 @@ function maxProfit(prices) {
 
 const profitgetadd = maxProfit([7, 1, 5, 3, 6, 4]);
 console.log(profitgetadd);
+
+// ----------  Leet Question -------------//
 
 // 28. Find the Index of the First Occurrence in a String
 // Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
@@ -556,6 +586,8 @@ var strStr = function (haystack, needle) {
   return -1;
 };
 
+// ----------  Leet Question -------------//
+
 // 58. Length of Last Word
 // Given a string s consisting of words and spaces, return the length of the last word in the string.
 // A word is a maximal
@@ -593,6 +625,8 @@ console.log(lengword);
 //     const lastword = s.trim().split(" ")
 //     return (lastword[lastword.length-1].length)
 // };
+
+// ----------  Leet Question -------------//
 
 // 125. Valid Palindrome
 // A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
