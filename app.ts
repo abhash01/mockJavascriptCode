@@ -6,10 +6,50 @@
 
 // console.log(calculate(num1, 3));
 
-function getTotal(numbers) {
-  return numbers.reduce((acc, curr) => {
-    return acc + curr;
-  }, 0);
+// number[] => Array<number> (generic used)
+// function getTotal(numbers: Array<number>) {
+//   return numbers.reduce((acc, curr) => {
+//     return acc + curr;
+//   }, 0);
+// }
+
+// console.log(getTotal([1, 3, 4]));
+
+// const user = {
+//   firstName: "john",
+//   lastName: "doe",
+//   role: "professor",
+// };
+
+// console.log(user);
+
+// Type alias
+
+// type User = { // for type alias always start with capital letter; eg  User
+//   name: string;
+//   age: number;
+//   address? : string
+// };
+
+// const user : User = {
+//   name: 'abhash',
+//   age: 123
+// }
+
+// Interfaces
+interface Transaction {
+  payAccountnumber: number;
+  payeeAccountnumber: number;
 }
 
-console.log(getTotal([1, 3, 4]));
+interface BankAccount {
+  accountnumber: number;
+  accountHolder: number;
+  balance: number;
+  isActive: boolean;
+  transaction: Transaction[];
+}
+
+// const BankAccount {
+
+// }

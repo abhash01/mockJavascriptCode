@@ -1,8 +1,8 @@
 // A polyfill in JavaScript is a piece of code (usually JavaScript) used to provide modern functionality
-//on older browsers that do not natively support it. Essentially, polyfills are used to "fill in"
+// on older browsers that do not natively support it. Essentially, polyfills are used to "fill in"
 // the gaps of missing features, ensuring that code can run consistently across different environments.
 
-//Polyfills are commonly used to:
+// Polyfills are commonly used to:
 
 // 1. Add support for newer JavaScript features that are not available in older browsers.
 //    For example, ES6 introduced many new features such as Promise, Array.from, and Object.assign, which older browsers do not support.
@@ -36,7 +36,7 @@ const multi = arr1.MyMapmethod((num) => {
 console.log(multi);
 
 // Polyfill for filter()
-//  Array.filter
+// Array.filter
 
 console.log(moreThanFive);
 // Another way Filter
