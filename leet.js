@@ -269,39 +269,6 @@ console.log(plusone);
 
 // ----------  Leet Question -------------//
 
-// 392. Is Subsequence
-// Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
-
-// A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters.
-//(i.e., "ace" is a subsequence of "abcde" while "aec" is not).
-
-// Example 1:
-// Input: s = "abc", t = "ahbgdc"
-// Output: true
-
-// Example 2:
-// Input: s = "axc", t = "ahbgdc"
-// Output: false
-
-function subsequence(s, t) {
-  let p1 = 0,
-    p2 = 0;
-  while (p1 < s.length && p2 < t.length) {
-    if (s[p1] === t[p2]) {
-      p1++;
-      p2++;
-    } else {
-      p2++;
-    }
-  }
-  return p1 === s.length;
-}
-
-const sub = subsequence("axc", "ahbgdc");
-console.log(sub);
-
-// ----------  Leet Question -------------//
-
 // 448. Find All Numbers Disappeared in an Array
 // Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
 
@@ -659,6 +626,8 @@ function isPalindrome(str) {
 const isPalindromeres = isPalindrome("A man, a plan, a canal: Panama");
 console.log(isPalindromeres);
 
+// ----------  Leet Question -------------//
+
 // 392. Is Subsequence
 // Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
 
@@ -695,6 +664,8 @@ console.log(isSubsequenceres);
 // p1            p1
 // ahbgdc      a h b g d c
 // p2            p2
+
+// ----------  Leet Question -------------//
 
 // 167. Two Sum II - Input Array Is Sorted
 // Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
@@ -733,6 +704,8 @@ function twoSum(nums, target) {
 const twoSumres = twoSum([2, 7, 11, 15], 9);
 console.log(twoSumres);
 
+// ----------  Leet Question -------------//
+
 // 9. Palindrome Number
 // Given an integer x, return true if x is a
 // palindrome  and false otherwise.
@@ -764,6 +737,8 @@ function isPalindrome(nums) {
 const resultisPalindrome = isPalindrome(-121);
 console.log(resultisPalindrome);
 
+// ----------  Leet Question -------------//
+
 // 151. Reverse Words in a String
 // Given an input string s, reverse the order of the words.
 
@@ -794,3 +769,43 @@ var reverseWords = function (s) {
   }
   return reverseStr;
 };
+
+// ----------  Leet Question -------------//
+
+// 49. Group Anagrams
+// Given an array of strings strs, group the
+// anagrams
+//  together. You can return the answer in any order.
+
+// Example 1:
+// Input: strs = ["eat","tea","tan","ate","nat","bat"]
+// Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+// Explanation:
+// There is no string in strs that can be rearranged to form "bat".
+// The strings "nat" and "tan" are anagrams as they can be rearranged to form each other.
+// The strings "ate", "eat", and "tea" are anagrams as they can be rearranged to form each other.
+// Example 2:
+
+// Input: strs = [""]
+// Output: [[""]]
+
+// Example 3:
+// Input: strs = ["a"]
+// Output: [["a"]]
+
+function groupAnagrams(strs) {
+  let obj = {};
+  for (let item of strs) {
+    let key = item.split("").sort().join("");
+    if (obj[key]) {
+      obj[key].push(item);
+    } else {
+      obj[key] = [item];
+    }
+  }
+  return Object.values(obj);
+}
+
+const groupAnares = groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]);
+console.log(groupAnares);
