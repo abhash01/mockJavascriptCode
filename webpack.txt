@@ -1,0 +1,70 @@
+Basic Webpack Questions:
+1. What is Webpack, and why is it used?
+
+Webpack is a popular module bundler for JavaScript applications. 
+It bundles multiple files into one or more output files to optimize performance and manage dependencies.
+
+2.What are Webpack loaders, and why are they used?
+
+Loaders in Webpack transform files of different types (such as TypeScript, SCSS, etc.) into valid modules that Webpack can bundle. For example, using babel-loader to transpile modern JavaScript into browser-compatible JavaScript.
+
+3.Explain Webpack plugins and how they differ from loaders.
+
+While loaders transform files, plugins perform broader tasks like optimizing bundles, injecting environment variables, or minifying files. Examples include HtmlWebpackPlugin (injects JavaScript into HTML) and TerserPlugin (minifies JavaScript).
+
+4.What is the purpose of entry and output in Webpack?
+
+entry defines the entry point(s) of your application (like src/index.js), and output specifies where the bundled files should be written, such as dist/main.js.
+
+5.How does code splitting work in Webpack?
+
+Code splitting allows you to break down your bundle into smaller pieces,
+ which are loaded on demand. This improves the performance of large applications. Webpack can split code based on routes, libraries, or dynamically imported modules.
+
+6.What is the difference between devDependencies and dependencies in the context of Webpack?
+
+dependencies are required for the application to run in production, 
+while devDependencies are needed only for development purposes, like Webpack, Babel, or testing frameworks.
+
+7.How does Webpack's Hot Module Replacement (HMR) work?
+
+HMR allows you to see updates in your application without a full page reload, 
+by replacing, adding, or removing modules while the application is running.
+
+
+Advanced Webpack Questions:
+What are tree shaking and dead code elimination in Webpack?
+
+Tree shaking is the process of removing unused code from the final bundle. Webpack uses static analysis to eliminate code that is never referenced, making the bundle smaller.
+How do you optimize Webpack build performance?
+
+Use techniques like caching with cache-loader, parallel processing with thread-loader, splitting vendor and application code, reducing the number of plugins/loaders, and setting the mode to production for better optimizations.
+How does Webpack handle dynamic imports?
+
+Using the import() syntax, Webpack can split chunks of code and load them dynamically when needed. This is useful for lazy loading routes or modules.
+What is Webpack's mode option, and how does it affect the build?
+
+The mode can be set to either development, production, or none. development focuses on fast rebuilds and includes detailed source maps, while production enables optimizations like minification and tree shaking.
+What is the purpose of the resolve option in Webpack?
+
+resolve specifies how Webpack should look for modules in your project. You can define extensions (e.g., .js, .jsx, .ts), alias certain paths, or limit the directories where Webpack should search for modules.
+How do you use Webpack with Babel to support older browsers?
+
+You configure Webpack to use babel-loader along with Babel presets (such as @babel/preset-env) to transpile modern JavaScript into a version compatible with older browsers.
+Webpack Configuration Questions:
+Can you explain the difference between inline, source-map, and eval-source-map for Webpack devtool?
+
+These are different ways of generating source maps, which help with debugging. Inline source maps embed the map in the bundled code, while source maps generate a separate map file. eval-source-map is faster but less detailed.
+How do you configure Webpack for multiple entry points?
+
+Webpack allows multiple entry points, which can be set by providing an object to the entry field. This is useful for creating multiple bundles for different parts of an application.
+What are externals in Webpack, and how do you use them?
+
+externals prevent certain libraries (like React or jQuery) from being bundled into the output file, assuming they will be available globally or loaded separately. This can reduce the bundle size.
+Scenario-based Questions:
+How would you configure Webpack for a React application?
+
+This involves setting up entry, output, and configuring loaders for .js or .jsx files using babel-loader. You’d also need plugins like HtmlWebpackPlugin and MiniCssExtractPlugin for injecting scripts and handling CSS, respectively.
+How do you handle environment-specific configurations in Webpack?
+
+You can create separate configuration files (e.g., webpack.dev.js, webpack.prod.js) and merge them using webpack-merge based on the environment. Another approach is using environment variables with the DefinePlugin.
