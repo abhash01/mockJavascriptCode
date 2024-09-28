@@ -231,3 +231,106 @@ a) 'Before async call', 'Async function start', 'After async call', 'Async funct
 b) 'Before async call', 'After async call', 'Async function start', 'Async function end' => correct
 c) 'Async function start', 'Before async call', 'After async call', 'Async function end'
 d) 'Before async call', 'Async function start', 'Async function end', 'After async call'
+
+console.log(1 + "2" + "2"); //122
+console.log(1 + +"2" + "2"); // 32
+console.log(1 + -"1" + "2"); // 02
+console.log(+"1" + "1" + "2"); // 112
+console.log("A" - "B" + "2"); //NaN2
+console.log("A" - "B" + 2); //NaN
+
+console.log(typeof null); // object
+console.log(typeof []);  // object
+console.log(Array.isArray([])); // true
+
+let x = 10;
+
+(function() {
+  console.log(x);   // Line 1
+  let x = 20;
+  console.log(x);   // Line 2
+})();
+
+//"ReferenceError: Cannot access 'x' before initialization</navigator>
+
+const a = { name: "John" };
+const b = { name: "John" };
+
+console.log(a == b); //false
+console.log(a === b); //false
+//Objects are reference types in JavaScript.
+// When you compare two objects with == or ===, 
+//it checks whether they reference the same object in memory, 
+//not whether their content is identical.
+
+function foo() {
+  return
+  {
+    bar: "Hello"
+  };
+}
+
+console.log(foo());
+
+// undefined </nav>
+
+let y = 1;
+
+if (function f() {}) {
+  y += typeof f;
+}
+
+console.log(y);
+//  1undefined
+// The if condition function f() {} is not a function declaration but a function expression, and function expressions are treated as truthy in conditions. So, the if block is executed.
+// Inside the block, typeof f evaluates to "undefined" because f is not in scope (function expressions are not hoisted like declarations).
+// As a result, y += "undefined" concatenates 1 with "undefined", resulting in y becoming "1undefined".
+
+async function test() {
+  return 1;
+}
+
+test().then(x => console.log(x));
+
+console.log(2);
+// 2
+// 1
+
+//Async functions always return a promise. The return 1; in the test function is equivalent to returning a resolved promise: Promise.resolve(1).
+//The promise is resolved asynchronously, so the then handler is executed after the synchronous code.
+//As a result, 2 is logged first, followed by 1 once the promise resolves.</navigation>
+
+let obj = {
+  a: 1,
+  getA() {
+    return this.a;
+  }
+};
+
+let getA = obj.getA;
+console.log(getA());
+
+//undefined
+
+
+console.log([..."hello"]);
+// ['h', 'e', 'l', 'l', 'o']
+
+function foo() {
+  try {
+    return 1;
+  } finally {
+    return 2;
+  }
+}
+
+console.log(foo());
+// 2
+//The finally block in a try...finally construct is always executed, even if there is a return statement inside the try block.
+//In this case, the return 2 inside the finally block overrides the return 1 from the try block, so the function returns 2.
+
+
+console.log(typeof NaN); // number
+console.log(NaN === NaN); // false
+console.log(NaN == NaN); // false
+console.log(isNaN("Hello")); // true
