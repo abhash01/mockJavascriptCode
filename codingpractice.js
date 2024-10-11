@@ -63,7 +63,7 @@ console.log(removedup([1, 2, 3, 4, 5, 5, 6, 6]));
 
 function checkAnagram(str1, str2) {
   const strfirst = str1.split("").sort().join("");
-  const strsecond = str1.split("").sort().join("");
+  const strsecond = str2.split("").sort().join("");
   return strfirst === strsecond;
 }
 console.log(checkAnagram("listen", "silent"));
@@ -124,18 +124,18 @@ function factorial(number) {
 
 console.log(factorial(5));
 
-// // 10. write a function to remove all whitespace characters from a string;
+// 10. write a function to remove all whitespace characters from a string;
 
-// function removeWhiteSpace(str) {
-//   // use the regular expression
-//   // including space , tabs, and line break
-//   // the g flag is used to perform a global search
+function removeWhiteSpace(str) {
+  // use the regular expression
+  // including space , tabs, and line break
+  // the g flag is used to perform a global search
 
-//   const result = str.replace(/\s/g, "");
-//   return result;
-// }
+  const result = str.replace(/\s/g, "");
+  return result;
+}
 
-// console.log(removeWhiteSpace("happy abhash ypu completerd "));
+console.log(removeWhiteSpace("happy abhash ypu completerd "));
 
 // const user = [
 //   { firstName: "abhash", lastName: "ranjanð", age: 32 },
