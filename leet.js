@@ -809,3 +809,34 @@ function groupAnagrams(strs) {
 
 const groupAnares = groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]);
 console.log(groupAnares);
+
+// 94. Binary Tree Inorder Traversal
+// Given the root of a binary tree, return the inorder traversal of its nodes' values.
+
+// Example 1:
+// Input: root = [1,null,2,3] Output: [1,3,2]
+
+// Example 2:
+// Input: root = [1,2,3,4,5,null,8,null,null,6,7,9] Output: [4,2,6,5,7,1,3,9,8]
+
+var inorderTraversal = function (root) {
+  let res = [];
+  inorder(root);
+  function inorder(root) {
+    if (!root) {
+      return null;
+    }
+    inorder(root.left);
+    res.push(root.val);
+    inorder(root.right);
+  }
+  return res;
+};
+
+// In-order traversal is one of the common tree traversal methods for a binary tree.
+// It follows the left-root-right pattern:
+
+// Visit the left subtree.
+// Visit the root node.
+// Visit the right subtree.
+// This traversal method is useful because it visits the nodes of a Binary Search Tree (BST) in ascending order.
