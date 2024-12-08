@@ -54,12 +54,48 @@ console.log(removeDuplicate([1, 2, 3, 4, 5, 5, 6, 6]));
 
 // 2nd way
 
+function removeDuplicate(arr) {
+  arr.sort((a, b) => a - b);
+  let index = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] !== arr[index]) {
+      index++;
+      arr[index] = arr[i];
+    }
+  }
+  arr.length = index + 1;
+  return arr;
+}
+const res = removeDuplicate([1, 2, 3, 4, 5, 5, 6, 6]);
+console.log(res);
+
+// 3rd way
+
 function removedup(str) {
   return [...new Set(str)];
 }
 console.log(removedup([1, 2, 3, 4, 5, 5, 6, 6]));
 
 // // 5. write a function that check wheater two string is anagrams or not ?
+// first way
+function checkAnagram(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  let obj = {};
+  for (let item of str1) {
+    obj[item] = (obj[item] || 0) + 1;
+  }
+  for (let key of str2) {
+    if (!obj[key]) return false;
+    else {
+      obj[key] = obj[key] - 1;
+    }
+  }
+  return true;
+}
+const rescheckAnagram = checkAnagram("listen", "silent");
+console.log(rescheckAnagram);
+
+// second way
 
 function checkAnagram(str1, str2) {
   const strfirst = str1.split("").sort().join("");

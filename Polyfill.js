@@ -5,9 +5,11 @@
 // Polyfills are commonly used to:
 
 // 1. Add support for newer JavaScript features that are not available in older browsers.
-//    For example, ES6 introduced many new features such as Promise, Array.from, and Object.assign, which older browsers do not support.
+//    For example, ES6 introduced many new features such as Promise, Array.from, and Object.assign,
+//    which older browsers do not support.
 // 2. Implement web APIs that are not available in all browsers. For instance,
-//    the Fetch API or the Intersection Observer API may need polyfills to work in older versions of Internet Explorer.
+//    the Fetch API or the Intersection Observer API may need polyfills to work in
+//    older versions of Internet Explorer.
 
 // map, filter and reduce
 // Polyfill for map()
