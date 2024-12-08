@@ -45,11 +45,11 @@ console.warn(!!"abhash"); //=> true
 console.warn(typeof "abhash"); //=> string
 
 // 6.
-let data = "size";
+let dat2 = "size";
 const bird = {
   size: "small",
 };
-console.warn(bird[data]); //=> small
+console.warn(bird[dat2]); //=> small
 console.warn(bird["size"]); //=> small
 console.warn(bird.size); //=> small
 console.warn(bird.data); //=> undefined
@@ -104,14 +104,14 @@ console.log(++number); // => 2
 console.log(number); // => 2
 
 // 14.
-const obj = { 1: "a", 2: "b", 3: "c" };
+const obj1 = { 1: "a", 2: "b", 3: "c" };
 
-console.log(obj.hasOwnProperty("1")); //=> true
-console.log(obj.hasOwnProperty(1)); //=> true
+console.log(obj1.hasOwnProperty("1")); //=> true
+console.log(obj1.hasOwnProperty(1)); //=> true
 
 // 15.
-const obj = { a: "one", b: "two", a: "three" };
-console.log(obj);
+const obj2 = { a: "one", b: "two", a: "three" };
+console.log(obj2);
 
 //ANS
 // {a: 'three', b: 'two'}  => position remain same but value override
@@ -135,7 +135,7 @@ const baz = () => console.log("third");
 bar();
 foo();
 baz();
-//function declaration is noit important function call is important
+//function declaration is not important function call is important
 //ANS
 // First;
 // third;
