@@ -68,3 +68,24 @@ This involves setting up entry, output, and configuring loaders for .js or .jsx 
 How do you handle environment-specific configurations in Webpack?
 
 You can create separate configuration files (e.g., webpack.dev.js, webpack.prod.js) and merge them using webpack-merge based on the environment. Another approach is using environment variables with the DefinePlugin.
+
+1, remove the duplicate 
+2. print the repeate value
+3. print array after romoving the duplicate
+4. sort asc and des
+5. missing element from array
+6. second the largest nunber
+7. shawllo and deep copy
+
+
+React
+// Api call
+// multile Api call
+// count > stop > reset > top
+// button increment and decrement
+// input field > delhi, mumbai eith adding
+// callBack funtion
+// useEffect > unmounting 
+// redux 
+// controll and uncontrolled
+// 

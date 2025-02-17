@@ -650,7 +650,7 @@ function isSubsequence(s, t) {
       p2++;
     }
   }
-  return (p1 = s.length);
+  return p1 === s.length;
 }
 
 const isSubsequenceres = isSubsequence("abc", "ahbgdc");
